@@ -1,17 +1,20 @@
-# Oppia Vulnerability Disclosure Process
+## Oppia Vulnerability Disclosure Process
+
+Security is a top priority for Oppia. This document outlines the steps for reporting, investigating, remediating, and disclosing security vulnerabilities. By following this process, you help ensure that Oppia remains secure and that vulnerabilities are handled responsibly to protect our users and developers. This process applies to vulnerabilities reported by both Oppia developers and external contributors.
+
 
 This vulnerability disclosure process describes how we accept and respond to security vulnerabilities from both Oppia developers and others. Our process follows 4 steps: Report, Investigate, Remediate, and Disclose.
 
-## Report
 
-Reporters should email [security@oppia.org](mailto:security@oppia.org) or open a [GitHub Security Vulnerability Report](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability) with:
+## Step 1: Report
+To report a vulnerability, please email **security@oppia.org** or open a [GitHub Security Vulnerability Report](https://github.com/oppia/oppia/security/advisories). Include the following information:
 
-- A description of the problem.
-- Steps we can follow to reproduce the problem.
-- Affected versions.
-- If known, mitigations for the problem.
+- **Description** of the problem.
+- **Steps to reproduce** the issue.
+- **Affected versions** of the software.
+- **Mitigations** (if known).
 
-We will respond within 3 days of the reporter's submission to acknowledge receipt of their report. Here is a template acknowledgement message:
+We will acknowledge receipt of your report within **3 days**.
 
 ```
 Hi $REPORTER,
@@ -23,7 +26,15 @@ Thanks,
 $OPPIA_SECURITY_TEAM_MEMBER
 ```
 
-## Investigate
+## Step 2: Investigate
+
+### Timeline Overview
+- **Within 3 days**: We will acknowledge the vulnerability report.
+- **Within 7 days**: Our team will classify the issue and notify the reporter of the next steps.
+- **Within 7 days of classification**: If the issue is classified as high-severity, mitigation steps will be implemented.
+- **Within 90 days**: The vulnerability will be fully disclosed and resolved, unless the reporter and VRT agree on an extended timeframe.
+
+After receiving the report, our security team will investigate the vulnerability to assess its impact and classify it accordingly.
 
 Immediately upon receiving a report of a security problem, a member of Oppia’s security team (the tech leads for now) will assemble a vulnerability response team (VRT). This team should:
 
@@ -55,7 +66,10 @@ The VRT lead will notify the reporter of the classification and the reasoning be
 
 The rest of this document describes how we handle high-severity vulnerabilities.
 
-## Remediate
+- **VRT Lead**: The Vulnerability Response Team (VRT) lead is responsible for driving the investigation, classification, and coordination of the remediation process.
+- **Developers**: A few developers with expertise in the affected part of the system will assist the VRT lead in assessing and resolving the issue.
+
+## Step 3: Remediate
 
 ### Create a Coordination Channel
 
@@ -74,7 +88,7 @@ A CVE should be requested for all security vulnerabilities. Since we create a Gi
 
 Regardless of which approach we take, the VRT will prioritize developing a patch to fix (or at least mitigate) the vulnerability. If the vulnerability is easily exploitable, mitigation will take priority over all other work. Mitigation should be completed within 7 days of the report being classified as a high-severity vulnerability. Once mitigated, additional remediation steps can be handled through our usual bug-fixing process.
 
-## Disclose
+## Step 4: Disclose
 
 We generally follow a 90-day disclosure timeframe, meaning that we ask that reporters give us 90 days to fix vulnerabilities before publicly disclosing them. 90 days should be viewed as an upper bound, and we aim to remediate vulnerabilities as quickly as possible. In all cases, the disclosure timeline will be explicitly coordinated with the reporter, and we prefer to publicly disclose the vulnerability simultaneously with the reporter. Our disclosure will include credit for the reporter if they so wish.
 
